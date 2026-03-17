@@ -133,62 +133,68 @@ CLARKE, I., SANDBERG, O., WILEY, B., HONG, T. (2001), Freenet: A Distributed An
 
 ### 11.1 Directory Structure
 
-`my\_capsule.epub/`
-`│`
-`├── mimetype│`
-`├── META-INF/`
-`│   ├── container.xml`
-`├── OEBPS/`
-`│   ├── content.opf`
-`│   ├── content.xhtml`
-`│   ├── cover.jpg`
-`│   └── capsule/`
-`│       ├── logic.wasm`
-`│       ├── keysregistry.json`
-`│       ├── history.merkle`
-`│       └── content.dat`
+```bash
+my_capsule.epub/
+│
+├── mimetype│
+├── META-INF/
+│   ├── container.xml
+├── OEBPS/
+│   ├── content.opf
+│   ├── content.xhtml
+│   ├── cover.jpg
+│   └── capsule/
+│       ├── logic.wasm
+│       ├── keysregistry.json
+│       ├── history.merkle
+│       └── content.dat
+```
+
 ### 11.2 content.opf
 
-`\<?xml version="1.0" encoding="UTF-8"?\>`
-` \<package`
-`    xmlns="http://www.idpf.org/2007/opf"`
-`    version="3.0"`
-`    unique-identifier="pub-id"\>`
-`  \<metadata xmlns:dc="http://purl.org/dc/elements/1.1/"\>`
-`    \<dc:identifier id="pub-id"\>urn:uuid:12345678-1234-1234-	1234-123456789abc\</dc:identifier\>`
-`    \<dc:title\>My Capsule Publication\</dc:title\>`
-`    \<dc:language\>en\</dc:language\>`
-`  \</metadata\>`
-`  \<manifest\>`
-`    \<!-- Core reading content --\>`
-`    \<item id="content"`
-`          href="content.xhtml"`
-`          media-type="application/xhtml+xml"/\>`
-`    \<item id="cover"`
-`          href="cover.jpg"`
-`          media-type="image/jpeg"`
-`          properties="cover-image"/\>`
-`    \<!-- Capsule primitives (foreign resources) --\>`
-`    \<item id="capsule-logic"`
-`          href="capsule/logic.wasm"`
-`          media-type="application/wasm"/\>`
-`    \<item id="capsule-registry"`
-`          href="capsule/keysregistry.json"`
-`          media-type="application/json"/\>`
-`    \<item id="capsule-history"`
-`          href="capsule/history.merkle"`
-`          media-type="application/octet-stream"/\>`
-`    \<item id="capsule-payload"`
-`          href="capsule/content.dat"`
-`          media-type="application/octet-stream"/\>`
-`  \</manifest\>`
-`  \<spine\>`
-`    \<itemref idref="content"/\>`
-`  \</spine\>`
-`\</package\>`
+```xml
+\<?xml version="1.0" encoding="UTF-8"?\>`
+ \<package`
+    xmlns="http://www.idpf.org/2007/opf"`
+    version="3.0"`
+    unique-identifier="pub-id"\>`
+  \<metadata xmlns:dc="http://purl.org/dc/elements/1.1/"\>`
+    \<dc:identifier id="pub-id"\>urn:uuid:12345678-1234-1234-	1234-123456789abc\</dc:identifier\>`
+    \<dc:title\>My Capsule Publication\</dc:title\>`
+    \<dc:language\>en\</dc:language\>`
+  \</metadata\>`
+  \<manifest\>`
+    \<!-- Core reading content --\>`
+    \<item id="content"`
+          href="content.xhtml"`
+          media-type="application/xhtml+xml"/\>`
+    \<item id="cover"`
+          href="cover.jpg"`
+          media-type="image/jpeg"`
+          properties="cover-image"/\>`
+    \<!-- Capsule primitives (foreign resources) --\>`
+    \<item id="capsule-logic"`
+          href="capsule/logic.wasm"`
+          media-type="application/wasm"/\>`
+    \<item id="capsule-registry"`
+          href="capsule/keysregistry.json"`
+          media-type="application/json"/\>`
+    \<item id="capsule-history"`
+          href="capsule/history.merkle"`
+          media-type="application/octet-stream"/\>`
+    \<item id="capsule-payload"`
+          href="capsule/content.dat"`
+          media-type="application/octet-stream"/\>`
+  \</manifest\>`
+  \<spine\>`
+    \<itemref idref="content"/\>`
+  \</spine\>`
+\</package\>`
+```
 
 ## 12 APPENDIX B: EXAMPLE KEY REGISTRY
 
+```json
 {  
  "registry_version": "1.0",  
  "capsule_id": "urn:uuid:12345678-1234-1234-1234-123456789abc",  
@@ -254,4 +260,5 @@ CLARKE, I., SANDBERG, O., WILEY, B., HONG, T. (2001), Freenet: A Distributed An
 	]  
 	}  
  ]  
-}`
+}
+```
